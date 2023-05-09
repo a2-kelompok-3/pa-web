@@ -20,5 +20,3 @@ function esc_string($field) {
 function currency($num) {
   return "Rp " . number_format($num, 0, ',', '.');
 }
-$conn = mysqli_connect('localhost','root','','pa_web');
-?>

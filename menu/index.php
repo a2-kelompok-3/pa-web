@@ -3,6 +3,8 @@ require('../koneksi.php');
 session_start();
 $user_id = $_SESSION['id'];
 $products = $mysqli->query("SELECT * FROM product");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +111,7 @@ $products = $mysqli->query("SELECT * FROM product");
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../assets/img/bakpia 2.jpg" alt="">
+        <img src="assets/img/bakpia 2.jpg" alt="">
         <h1>Bakpiaku<span></span></h1>
       </a>
       <nav id="navbar" class="navbar">
@@ -163,68 +165,10 @@ $products = $mysqli->query("SELECT * FROM product");
         </div>
       </div>
     </section><!-- End Menu Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>Need Help? <span>Contact Us</span></p>
-        </div>
-
-        <div class="row gy-4">
-
-          <div class="col-md-6">
-            <div class="info-item  d-flex align-items-center">
-              <i class="icon bi bi-map flex-shrink-0"></i>
-              <div>
-                <h3>Our Address</h3>
-                <p>
-              jln. Malioboro <br>
-              Yogyakarta, Jawa Tengah<br>
-            </p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center">
-              <i class="icon bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>bakpiaku@gmail.com</p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item  d-flex align-items-center">
-              <i class="icon bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item  d-flex align-items-center">
-              <i class="icon bi bi-share flex-shrink-0"></i>
-              <div>
-                <h3>Opening Hours</h3>
-                <div><strong>Mon-Sat:</strong> 11AM - 23PM;
-                  <strong>Sunday:</strong> Closed
-                </div>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-        </div>
-
   </main><!-- End #main -->
   <div id="sum" class="sum shadow-lg ">
     <div style="height: 100%;" class="d-flex mt-5 pb-3 flex-column justify-content-between px-3">
-      <div class="container d-flex flex-column product-sum">
+      <div class="container d-flex flex-column product-sum"">
       </div>
       <div class=" d-flex justify-content-between align-items-center">
         <div>Total <strong class="total-text">Rp.20000</strong></div>

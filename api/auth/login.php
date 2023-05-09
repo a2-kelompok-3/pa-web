@@ -21,8 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       'email' => $user['email'],
       'role' => $user['role']
     );
-    session_start();
-    $_SESSION['id']=$user['id'];
     echo json_encode($res);
   } catch (\Throwable $th) {
     echo json_encode(array('success' => false, 'message' => 'Terjadi Kesalahan' . $th));
