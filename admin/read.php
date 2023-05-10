@@ -208,18 +208,6 @@ if (isset($_GET['search'])) {
         </tr>
       </thead>
 
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nama</th>
-          <th>Harga</th>
-          <th>Gambar</th>
-          <th>Deskripsi</th>
-          <th>Ubah</th>
-          <th>Hapus</th>
-        </tr>
-      </thead>
-
       <?php
       while ($row = mysqli_fetch_assoc($result)) { ?>
         <tbody>
