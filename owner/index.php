@@ -113,6 +113,8 @@ include '../koneksi.php';
   
   <main>
         <div class="container">
+        <br><br><br><br><br><br><br><br>
+        <h1>History Transaksi</h1>
         <br><br><br><br><br><br><br><br><p>This is a paragraph</p>
         </div>
 

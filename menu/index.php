@@ -133,8 +133,8 @@ $products = $mysqli->query("SELECT * FROM product");
     <section id="menu" class="menu d-flex align-items-center mt-5">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Our Menu</h2>
-          <p>Check Our <span>Bakpiaku <?= $_SESSION['id'] ?></span></p>
+          <h2>Check Out</h2>
+          <p>Our Menu <span>Bakpiaku</span></p>
         </div>
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
           <div class="tab-pane fade active show" id="menu-starters">
@@ -165,6 +165,64 @@ $products = $mysqli->query("SELECT * FROM product");
         </div>
       </div>
     </section><!-- End Menu Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Need Help? <span>Contact Us</span></p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-map flex-shrink-0"></i>
+              <div>
+                <h3>Our Address</h3>
+                <p>
+              jln. Malioboro <br>
+              Yogyakarta, Jawa Tengah<br>
+            </p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>bakpiaku@gmail.com</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Opening Hours</h3>
+                <div><strong>Mon-Sat:</strong> 11AM - 23PM;
+                  <strong>Sunday:</strong> Closed
+                </div>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+        </div>
+        
   </main><!-- End #main -->
   <div id="sum" class="sum shadow-lg ">
     <div style="height: 100%;" class="d-flex mt-5 pb-3 flex-column justify-content-between px-3">

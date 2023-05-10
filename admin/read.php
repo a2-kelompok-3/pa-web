@@ -9,8 +9,22 @@ if (!$mysqli) {
 
 // query to retrieve data from database
 $query = "SELECT * FROM product";
-$result = mysqli_query($mysqli, $query);
 
+// check if the search parameter is set
+if (isset($_GET['search'])) {
+  // escape any special characters to prevent SQL injection
+  $search = mysqli_real_escape_string($mysqli, $_GET['search']);
+
+  // query untuk mengambil data produk yang mengandung kata kunci pencarian pada kolom nama produk
+  $query = "SELECT * FROM product WHERE name LIKE '%$search%'";
+
+  // eksekusi query
+  $result = mysqli_query($mysqli, $query);
+} else {
+  // jika parameter search tidak diset, tampilkan semua data produk
+  $query = "SELECT * FROM product";
+  $result = mysqli_query($mysqli, $query);
+}
 ?>
 
 
@@ -68,6 +82,13 @@ $result = mysqli_query($mysqli, $query);
     text-align: center;
     padding-left: 20px;
   }
+
+  table td:first-child {
+    text-align: left;
+    padding-left: 20px;
+    border-left: 0;
+  }
+
 
   table td:first-child {
     text-align: left;
@@ -135,6 +156,7 @@ $result = mysqli_query($mysqli, $query);
   <hr>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-success" href="../admin/create.php" role="button">Tambah Menu</a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-success" href="../admin/create.php" role="button">Tambah
     Menu</a>
   <br><br>
@@ -169,6 +191,25 @@ $result = mysqli_query($mysqli, $query);
         }
       }
       ?>
+
+      <form action="" method="GET">
+      <label for="search">Cari Produk :  </label>
+      <input type="text" name="search" id="search">
+      <input type="submit" value="Search">
+      </form>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Harga</th>
+          <th>Gambar</th>
+          <th>Deskripsi</th>
+          <th>Ubah</th>
+          <th>Hapus</th>
+        </tr>
+      </thead>
+
       <thead>
         <tr>
           <th>ID</th>

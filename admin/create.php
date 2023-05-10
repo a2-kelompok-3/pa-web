@@ -6,7 +6,6 @@ require "../koneksi.php";
 <html>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,6 +72,7 @@ label {
 <body>
     <nav id="navbar" class="navbar">
         <ul>
+            <li><a href="read.php">Back</a></li>
             <li><a href="read.php">Home</a></li>
             <li><a href="../logout.php">Logout</a></li>
         </ul>
