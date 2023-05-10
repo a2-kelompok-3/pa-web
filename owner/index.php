@@ -97,8 +97,8 @@ include '../koneksi.php';
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/bakpia 2.jpg" alt="">
-        <h1>Bakpiaku<span></span></h1>
+        <img src="../assets/img/bakpia 2.jpg" alt="">
+        <h1>Bakpiaku OWNER<span></span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -112,12 +112,13 @@ include '../koneksi.php';
   </header>
   
   <main>
+
+
+  
         <div class="container">
         <br><br><br><br><br><br><br><br>
-        <h1>History Transaksi</h1>
-        <br><br><br><br><br><br><br><br><p>This is a paragraph</p>
+        <h1>Rekap Transaksi</h1>
         </div>
-
         <div class="container">
         <table id="dtt" class="table table-striped table-bordered">
             <thead>
@@ -155,5 +156,65 @@ include '../koneksi.php';
         });
         </script>
     </main>
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+<div class="container">
+  <div class="row gy-3">
+    <div class="col-lg-3 col-md-6 d-flex">
+      <i class="bi bi-geo-alt icon"></i>
+      <div>
+        <h4>Address</h4>
+        <p>
+          jln. Malioboro <br>
+          Yogyakarta, Jawa Tengah<br>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-6 footer-links d-flex">
+      <i class="bi bi-telephone icon"></i>
+      <div>
+        <h4>contact</h4>
+        <p>
+          <strong>Phone:</strong> +1 5589 55488 55<br>
+          <strong>Email:</strong> bakpiaku@gmail.com<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 footer-links d-flex">
+      <i class="bi bi-clock icon"></i>
+      <div>
+        <h4>Opening Hours</h4>
+        <p>
+          <strong>Mon-Sat: 11AM</strong> - 23PM<br>
+          Sunday: Closed
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 footer-links">
+      <h4>Follow Us</h4>
+      <div class="social-links d-flex">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="copyright">
+    <p>Created by Kelompok 3 A2 | © 2023</p>
+  </div>
+</div>
+
+</footer><!-- End Footer -->
 </body>
 </html>
