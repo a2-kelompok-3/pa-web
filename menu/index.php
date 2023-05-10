@@ -3,8 +3,6 @@ require('../koneksi.php');
 session_start();
 $user_id = $_SESSION['id'];
 $products = $mysqli->query("SELECT * FROM product");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -111,7 +109,7 @@ $products = $mysqli->query("SELECT * FROM product");
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/bakpia 2.jpg" alt="">
+        <img src="../assets/img/bakpia 2.jpg" alt="">
         <h1>Bakpiaku<span></span></h1>
       </a>
       <nav id="navbar" class="navbar">
