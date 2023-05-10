@@ -117,7 +117,7 @@ include '../koneksi.php';
   
         <div class="container">
         <br><br><br><br><br><br><br><br>
-        <h1>Rekap Transaksi</h1>
+        <h1>History Transaksi</h1>
         </div>
         <div class="container">
         <table id="dtt" class="table table-striped table-bordered">
