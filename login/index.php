@@ -11,7 +11,7 @@ if (!empty($_POST)) {
   if ($_POST['role'] === 'user') {
     header('Location: ../menu/');
   } else if ($_POST['role'] === 'admin') {
-    header('Location: ../admin/beranda_admin.php');
+    header('Location: ../admin/read.php');
   } else if ($_POST['role'] === 'owner') {
     header('Location: ../owner/');
   }

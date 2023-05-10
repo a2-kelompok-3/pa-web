@@ -3,6 +3,8 @@ require('../koneksi.php');
 session_start();
 $user_id = $_SESSION['id'];
 $products = $mysqli->query("SELECT * FROM product");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +111,7 @@ $products = $mysqli->query("SELECT * FROM product");
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../assets/img/bakpia 2.jpg" alt="">
+        <img src="assets/img/bakpia 2.jpg" alt="">
         <h1>Bakpiaku<span></span></h1>
       </a>
       <nav id="navbar" class="navbar">
@@ -131,8 +133,8 @@ $products = $mysqli->query("SELECT * FROM product");
     <section id="menu" class="menu d-flex align-items-center mt-5">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Our Menu</h2>
-          <p>Check Our <span>Bakpiaku <?= $_SESSION['id'] ?></span></p>
+          <h2>Check Out</h2>
+          <p>Our Menu <span>Bakpiaku</span></p>
         </div>
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
           <div class="tab-pane fade active show" id="menu-starters">
@@ -148,7 +150,7 @@ $products = $mysqli->query("SELECT * FROM product");
                   <i class="bi bi-check-circle-fill check-icon"></i>
                   <!-- Amount -->
                   <input data-id="<?= $product['id'] ?>" class="form-control form-control-sm amount amount-<?= $product['id'] ?>" min="1" value="1" max="999" type="number" placeholder="Qty" aria-label=".form-control-sm example">
-                  <img src="../<?= $product['image'] ?>" class="menu-img img-fluid" alt="">
+                  <img src="../foto/<?= $product['image'] ?>" class="menu-img img-fluid" alt="">
                   <h4><?= $product['name'] ?></h4>
                   <p class="ingredients">
                     <?= $product['description'] ?>
@@ -220,11 +222,11 @@ $products = $mysqli->query("SELECT * FROM product");
             </div>
           </div><!-- End Info Item -->
         </div>
-
+        
   </main><!-- End #main -->
   <div id="sum" class="sum shadow-lg ">
     <div style="height: 100%;" class="d-flex mt-5 pb-3 flex-column justify-content-between px-3">
-      <div class="container d-flex flex-column product-sum">
+      <div class="container d-flex flex-column product-sum"">
       </div>
       <div class=" d-flex justify-content-between align-items-center">
         <div>Total <strong class="total-text">Rp.20000</strong></div>

@@ -96,11 +96,8 @@ order.user_id='$user_id'"); ?>
           <div class="section-header">
             <h2>Pesanan</h2>
             <p>
-              Cek Pesanan
-              <span
-                >Bakpiaku
-                <?= $_SESSION['id'] ?></span
-              >
+              Cek Pesanan 
+              <span>Bakpiaku</span>
             </p>
           </div>
           <table class="table" id="orderTable">
