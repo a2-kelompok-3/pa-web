@@ -160,11 +160,7 @@ order.user_id='$user_id'"); ?>
       <!-- End Menu Section -->
     </main>
     <!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <!-- End Footer -->
-    <!-- End Footer -->
-
+    
     <a
       href="#"
       class="scroll-top d-flex align-items-center justify-content-center"
@@ -259,7 +255,7 @@ order.user_id='$user_id'"); ?>
       }
 
       let table = new DataTable("#orderTable", {
-        ajax: "../api/order/getAll.php?id=3",
+        ajax: "../api/order/getAll.php?id=<?= $user_id ?>",
         columns: [
           {
             className: "dt-control",
