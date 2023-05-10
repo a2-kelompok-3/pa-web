@@ -7,6 +7,7 @@ $products = $mysqli->query("SELECT * FROM product");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
+
     $query = "DELETE FROM product WHERE id = ?";
     $stmt = mysqli_prepare($mysqli, $query);
     mysqli_stmt_bind_param($stmt, "i", $id);
@@ -18,4 +19,3 @@ echo "<script>
     alert('Berhasil Menghapus Data');
     window.location.href = '../admin/read.php';
 </script>";
-?>

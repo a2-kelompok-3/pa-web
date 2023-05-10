@@ -150,7 +150,7 @@ $products = $mysqli->query("SELECT * FROM product");
                   <i class="bi bi-check-circle-fill check-icon"></i>
                   <!-- Amount -->
                   <input data-id="<?= $product['id'] ?>" class="form-control form-control-sm amount amount-<?= $product['id'] ?>" min="1" value="1" max="999" type="number" placeholder="Qty" aria-label=".form-control-sm example">
-                  <img src="../<?= $product['image'] ?>" class="menu-img img-fluid" alt="">
+                  <img src="../foto/<?= $product['image'] ?>" class="menu-img img-fluid" alt="">
                   <h4><?= $product['name'] ?></h4>
                   <p class="ingredients">
                     <?= $product['description'] ?>

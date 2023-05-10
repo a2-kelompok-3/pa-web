@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2023 at 06:56 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Waktu pembuatan: 10 Bulan Mei 2023 pada 07.56
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Struktur dari tabel `order`
 --
 
 CREATE TABLE `order` (
@@ -35,7 +35,7 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `order`
+-- Dumping data untuk tabel `order`
 --
 
 INSERT INTO `order` (`id`, `user_id`, `total_price`, `status`) VALUES
@@ -44,10 +44,11 @@ INSERT INTO `order` (`id`, `user_id`, `total_price`, `status`) VALUES
 (4, 3, 100000, 'success'),
 (5, 3, 33000, 'success'),
 (6, 3, 68000, 'cancelled'),
-(7, 3, 35000, 'cancelled');
+(7, 3, 35000, 'cancelled'),
+(8, 3, 120000, 'progress');
 
 --
--- Triggers `order`
+-- Trigger `order`
 --
 DELIMITER $$
 CREATE TRIGGER `Transaksi sukses` AFTER UPDATE ON `order` FOR EACH ROW IF NEW.status = 'success' THEN 
@@ -60,7 +61,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_product`
+-- Struktur dari tabel `order_product`
 --
 
 CREATE TABLE `order_product` (
@@ -72,18 +73,22 @@ CREATE TABLE `order_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `order_product`
+-- Dumping data untuk tabel `order_product`
 --
 
 INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `amount`, `total`) VALUES
 (2, 2, 4, 4, 1600000),
 (3, 2, 6, 4, 2400000),
-(5, 3, 6, 1, 600000);
+(5, 3, 6, 1, 600000),
+(11, 8, 5, 1, 5000),
+(12, 8, 11, 1, 5000),
+(13, 8, 13, 5, 25000),
+(14, 8, 15, 10, 85000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Struktur dari tabel `product`
 --
 
 CREATE TABLE `product` (
@@ -91,24 +96,28 @@ CREATE TABLE `product` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `product`
+-- Dumping data untuk tabel `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `price`, `image`, `description`, `content`) VALUES
-(3, 'Bakpiaku Ubi Ungu', 40000, 'assets/img/menu/menu-item-3.png', ' best seller!!!\r\n', ' Ubi Ungu, Tepung, Gula, Margarin '),
-(4, 'Bakpiaku Keju', 45000, 'assets/img/menu/menu-item-4.png', ' best seller!!\r\n', ' Keju, Susu, Tepung, Gula, Margarin '),
-(5, 'Bakpiaku Pandan', 55000, 'assets/img/menu/menu-item-5.png', ' best seller!!!', ' Pandan, Tepung, Gula, Margarin '),
-(6, 'Bakpiaku Kacang', 60000, 'assets/img/menu/menu-item-6.png', ' best seller!!!', ' Coklat, kacang cincang, Tepung, Gula, \r\n Margarin ');
+INSERT INTO `product` (`id`, `name`, `price`, `image`, `description`) VALUES
+(3, 'Bakpiaku Ubi Ungu', 5500, '595490803_bakpia_ubiungu.jpg', 'Krispi di luar, lembut di dalam dengan rasa yang manis dan warna ungu yang cantik!\r\n'),
+(4, 'Bakpiaku Keju', 7000, '2112876353_bakpia_keju.jpg', 'Best Seller! Manis, gurih, asin, nikmat rasanya!!\r\n'),
+(5, 'Bakpiaku Pandan', 5000, '824872357_bakpia_pandan.jpg', 'Rasa manis yang alami dari pandan!'),
+(6, 'Bakpiaku Kacang', 5500, '1848769015_bakpia_kacang.jpg', 'Rasa yang nikmat dan lezat!'),
+(11, 'Bakpiaku Nanas', 5000, '253197816_bakpia_nanas.jpg', 'Enak karena sangat terasa nanasnya!'),
+(12, 'Bakpiaku Cokelat', 5000, '1447306687_bakpia_cokelat.jpg', 'Super Best Seller!!'),
+(13, 'Bakpiaku Susu', 5000, '739985605_bakpia_susu.jpg', 'Rasa yang manis dan lembut di mulut'),
+(14, 'Bakpiaku Kacang Hijau', 5500, '657438779_bakpia_khijau.jpg', 'Rasa yang gurih dan lembut di mulut'),
+(15, 'Bakpiaku Durian', 8500, '1673675448_bakpia_durian.jpg', 'Rasa Terbaru! Enak karena manis dan lembut juga sangat terasa duriannya!!!');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaction_history`
+-- Struktur dari tabel `transaction_history`
 --
 
 CREATE TABLE `transaction_history` (
@@ -121,7 +130,7 @@ CREATE TABLE `transaction_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transaction_history`
+-- Dumping data untuk tabel `transaction_history`
 --
 
 INSERT INTO `transaction_history` (`id`, `user_id`, `id_produk`, `total_price`, `status`, `waktu`) VALUES
@@ -131,7 +140,7 @@ INSERT INTO `transaction_history` (`id`, `user_id`, `id_produk`, `total_price`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -143,7 +152,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `role`) VALUES
@@ -160,14 +169,14 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`, `role`) VALUES
 --
 
 --
--- Indexes for table `order`
+-- Indeks untuk tabel `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `order_product`
+-- Indeks untuk tabel `order_product`
 --
 ALTER TABLE `order_product`
   ADD PRIMARY KEY (`id`),
@@ -175,69 +184,69 @@ ALTER TABLE `order_product`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `product`
+-- Indeks untuk tabel `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transaction_history`
+-- Indeks untuk tabel `transaction_history`
 --
 ALTER TABLE `transaction_history`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT untuk tabel `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `order_product`
+-- AUTO_INCREMENT untuk tabel `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT untuk tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `transaction_history`
+-- AUTO_INCREMENT untuk tabel `transaction_history`
 --
 ALTER TABLE `transaction_history`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `order`
+-- Ketidakleluasaan untuk tabel `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `order_product`
+-- Ketidakleluasaan untuk tabel `order_product`
 --
 ALTER TABLE `order_product`
   ADD CONSTRAINT `order_product_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
