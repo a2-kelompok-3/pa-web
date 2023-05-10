@@ -25,7 +25,6 @@ if (isset($_GET['search'])) {
   $query = "SELECT * FROM product";
   $result = mysqli_query($mysqli, $query);
 }
-
 ?>
 
 
@@ -83,6 +82,13 @@ if (isset($_GET['search'])) {
     text-align: center;
     padding-left: 20px;
   }
+
+  table td:first-child {
+    text-align: left;
+    padding-left: 20px;
+    border-left: 0;
+  }
+
 
   table td:first-child {
     text-align: left;
@@ -151,6 +157,8 @@ if (isset($_GET['search'])) {
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-success" href="../admin/create.php" role="button">Tambah Menu</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-success" href="../admin/create.php" role="button">Tambah
+    Menu</a>
   <br><br>
   <center>
     <table border="1" cellpadding="10" cellspacing="0">
@@ -189,6 +197,18 @@ if (isset($_GET['search'])) {
       <input type="text" name="search" id="search">
       <input type="submit" value="Search">
       </form>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Harga</th>
+          <th>Gambar</th>
+          <th>Deskripsi</th>
+          <th>Ubah</th>
+          <th>Hapus</th>
+        </tr>
+      </thead>
 
       <thead>
         <tr>

@@ -73,6 +73,7 @@ label {
     <nav id="navbar" class="navbar">
         <ul>
             <li><a href="read.php">Back</a></li>
+            <li><a href="read.php">Home</a></li>
             <li><a href="../logout.php">Logout</a></li>
         </ul>
     </nav><!-- .navbar -->
